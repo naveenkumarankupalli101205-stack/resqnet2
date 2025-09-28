@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #FAFAFA; /* warm off-white */
+    --color-foreground: #111827; /* near-black */
+    --color-border: #E5E7EB; /* light gray */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #2563EB; /* trust blue */
+    
+    /* Card Colors */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #111827; /* near-black */
+    
+    /* Popover Colors */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #111827; /* near-black */
+    
+    /* Muted Colors */
+    --color-muted: #F3F4F6; /* light gray */
+    --color-muted-foreground: #6B7280; /* medium gray */
+    
+    /* Primary Colors - Emergency Red */
+    --color-primary: #DC2626; /* emergency red */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors - Safety Green */
+    --color-secondary: #059669; /* safety green */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors - Trust Blue */
+    --color-accent: #2563EB; /* trust blue */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* Destructive Colors */
+    --color-destructive: #EF4444; /* bright red */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Success Colors */
+    --color-success: #10B981; /* vibrant green */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    /* Warning Colors */
+    --color-warning: #F59E0B; /* amber */
+    --color-warning-foreground: #111827; /* near-black */
+    
+    /* Error Colors */
+    --color-error: #EF4444; /* bright red */
+    --color-error-foreground: #FFFFFF; /* white */
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Emergency-specific base styles */
+  .emergency-focus {
+    @apply ring-2 ring-primary ring-offset-2;
+  }
+
+  .safety-focus {
+    @apply ring-2 ring-secondary ring-offset-2;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
